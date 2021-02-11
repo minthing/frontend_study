@@ -1,0 +1,120 @@
+@keyframes scroll{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 70px 70px;
+  }
+} /*css3관련 더 학습하기~*/
+
+html, body{
+  margin:0;
+  height:100%;
+}
+body,ul{
+  margin:0;
+  padding:0;
+}
+body{
+  background-color:#FFFFF3;
+}
+.wrap_cont{
+  margin:50px auto;
+  width:800px;
+}
+.cont_cookie{
+  display:flex;
+  margin:0;
+}
+.item_cookie{
+  list-style-type:none;
+  justify-content: center;
+  height:600px;
+  width:33.33333%;
+  position:relative;
+  transition: all 0.5s;
+  line-height:600px;
+}
+.item_cookie:before{
+  content: ' ';
+  display: block;
+  position: absolute;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index:0;
+  animation-name: scroll;
+  animation-duration:1s;
+  animation-iteration-count:infinite;
+}
+.item_cookie.first{
+  background-color:#f8ecc9;
+  text-align:right;
+}
+.item_cookie.first:before{
+  background: url(images/cocktail.png);
+  background-size: 70px 70px;
+}
+.item_cookie.second{
+  background-color:#9B8281;
+  text-align:center;
+  line-height:200px;
+}
+.item_cookie.second:before{
+  background: url(images/choco.png);
+  background-size: 70px 70px;
+}
+.item_cookie.third{
+  background-color:#c6e5d9;
+  text-align:left;
+}
+.item_cookie.third:before{
+  background: url(images/plant.png);
+  background-size: 70px 70px;
+}
+.img_cookie{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transition: all 0.5s;
+  transform:translate(-50%, -50%) scale(0.7);
+}
+  h2{
+  position:absolute;
+  padding: 0 0.4rem;
+  transition:all 0.5s;
+  opacity:0;
+  font-size:0;
+  z-index:100;
+  font-family: 'Pacifico', cursive;
+  background: -webkit-linear-gradient(-91deg, #8abba4, #66221e);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  color: #fff;
+}
+.item_cookie.first h2{
+  right: 5%;
+}
+.item_cookie.second h2{
+  right: 0;
+  left:0;
+}
+.item_cookie:hover{
+  width:60%;
+}
+.item_cookie:hover > h2{
+  font-size:2.5rem;
+  opacity:1;
+  z-index:100;
+}
+.first:hover > .img_cookie{
+  transform:translate(-90%, -50%) scale(1.05) rotate(-6deg);
+}
+.second:hover > .img_cookie{
+  transform:translate(-50%, -20%) scale(1.05);
+}
+.third:hover > .img_cookie{
+  transform:translate(-10%, -50%) scale(1.05) rotate(6deg);
+}
