@@ -1,0 +1,191 @@
+/*reset*/
+body{
+  margin:0;
+}
+h1{
+  margin:0;
+  font-size:100%;
+  font-weight:normal;
+}
+
+/*color code*/
+:root{
+  --background: #f8ecc9;
+  --font-color:#592d0c;
+  --cookie-body:#db9645;
+  --cookie-border:#691e0a;
+  --cookie-shade:#c57136;
+  --cookie-eye-deep:#0d4398;
+}
+
+/*outline*/
+.wrap_cont{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%); /*자기 길이의 절반만큼 반대로 움직임*/
+}
+
+
+/*design*/
+body{
+  background-color:var(--background);
+  color:var(--font-color);
+  text-align:center;
+}
+
+.cont_cookie{
+  margin:0 auto;
+  background-color: var(--cookie-body);
+  color:var(--cookie-body);
+  width:300px;
+  height:300px;
+  border-radius:52% 42% 50% 42%;
+  background-image:
+  linear-gradient(
+    to top right, 
+    #cc7a3e 20%, #eba35b 80%
+  );
+}
+
+.cont_cookie:before{
+  content:'';
+  display:block;
+  position:absolute;
+  z-index: -1;
+  background-color: var(--cookie-border);
+  border-radius: 49% 39% 52% 42%;
+  width: 320px;
+  height: 317px;
+  margin: 0 auto;
+  top: -5px;
+  left: -6px;
+  right: 0;
+  bottom: 0;
+}
+
+.eye_left{
+  position: absolute;
+  top: 96px;
+  left: 99px;
+  width: 59px;
+  height: 59px;
+  border: 9px solid #fff;
+  background-image: linear-gradient(to bottom, #0d4398 ,#3396fd);
+  border-radius:74% 65% 69% 62%;
+}
+
+.eye_left:before{
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  border-bottom: 3px solid var(--cookie-border);
+  border-radius: 37% 27% 30% 30%;
+  width: 81px;
+  height: 15px;
+  margin: 0 auto;
+  top: -11px;
+  left: -18px;
+  right: 0;
+  bottom: 0;
+  transform: rotate(10deg);
+}
+
+.eye_right{
+  position: absolute;
+  top: 93px;
+  left: 209px;
+  width: 59px;
+  height: 59px;
+  border: 9px solid #fff;
+  background-image: linear-gradient(to bottom, #0d4398 ,#3396fd);
+  border-radius:74% 65% 69% 62%;
+}
+
+.eye_right:before{
+  content: '';
+    display: block;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    border-bottom: 3px solid var(--cookie-border);
+    border-radius: 37% 27% 30% 30%;
+    width: 81px;
+    height: 15px;
+    margin: 0 auto;
+    top: -11px;
+    left: -14px;
+    right: 0;
+    bottom: 0;
+    transform: rotate(-13deg);
+}
+
+.mouth{
+    width: 181px;
+    height: 31px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: linear-gradient( to right, #bb2221 20%, #a52e1b 80% );
+    top: 192px;
+    left: 24%;
+    transform: rotate(-5deg);
+}
+
+.mouth:before{
+    content: '';
+    display: block;
+    width: 174px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: linear-gradient( to left, #dd8e4d 20%, #cf7e40 80% );
+    top: -6px;
+    left: 6px;
+    transform: rotate(-2deg);
+}
+/*
+.eyebrow{
+    background: var(--cookie-border);
+    width: 29px;
+    height: 48px;
+    position: absolute;
+    border-radius: 55% 55% 62% 52%;
+    top: 87px;
+    left: 160px;
+    z-index: 20;
+}
+
+.eyebrow:before{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 15;
+    background: white;
+    border-radius: 55% 55% 62% 52%;
+    width: 32px;
+    height: 43px;
+    top: 0px;
+    left: -2px;
+}
+
+.eyebrow:after{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 15;
+    background: #e49954;
+    border-radius: 55% 55% 62% 52%;
+    width: 32px;
+    height: 43px;
+    top: -10px;
+    left: -2px;
+}
+*/
+.title{
+  padding:50px 0 0;
+  line-height:1;
+  font-size:4.5rem;
+  font-family: 'Press Start 2P', cursive;
+}
