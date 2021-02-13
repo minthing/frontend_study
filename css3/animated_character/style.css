@@ -16,7 +16,27 @@
   }
 }
 
-@@keyframes mouth{
+@keyframes wrap_eye{
+  0%{
+    margin:-25px -10px 25px;
+  }
+  100%{
+    margin:0 -20px;
+  }
+}
+
+@keyframes eye{
+  0%{
+  border-width:34px;
+  border-color:transparent transparent black transparent
+  }
+  100%{
+  border-width:40px;
+  border-color:transparent transparent yellow transparent;
+  }
+}
+
+@keyframes mouth{
   0%{
     height:20px
   }
@@ -24,7 +44,9 @@
     height:40px;
   }
   100%{
-    height:20px;
+    height:30px;
+    background-color:yellow;
+    box-shadow:inset 0 0 40px orangered;
   }
 }
 
@@ -81,6 +103,10 @@ body{
 .wrap_eye{
   margin: 0 -20px;
   display:flex;
+  animation-name:wrap_eye;
+  animation-duration:1s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate-reverse;
 }
 
 .eye{
@@ -92,6 +118,10 @@ body{
   border-style:solid;
   border-color: transparent transparent black transparent;
   margin:0 20px;
+  animation-name:eye;
+  animation-duration:1s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate-reverse;
 }
 
 .mouth{
@@ -102,4 +132,8 @@ body{
   border-bottom:10px dotted orangered;
   border-bottom-left-radius:30px;
   border-bottom-right-radius:30px;
+  animation-name:mouth;
+  animation-duration:1s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate-reverse;
 }
