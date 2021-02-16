@@ -1,0 +1,12 @@
+body{
+  position:relative;
+}
+
+.cursor{
+  position:absolute;
+  width:100px;
+  height:100px;
+  background:tan;
+  left:0;
+  top:0;
+}
