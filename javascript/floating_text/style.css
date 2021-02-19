@@ -1,5 +1,25 @@
 body{
   position:relative;
+  background:black;
+  overflow:hidden;
+  
+    width: 100%;
+    height: 100vh;
+
+}
+
+button{
+  font-size:40px;
+  padding: 30px 80px;
+  margin:50px;
+  transition: all .3s ease;
+  color:tan;
+  background:white;
+}
+
+button:hover{
+  color:white;
+  background:tan;
 }
 
 .cursor{
@@ -9,4 +29,21 @@ body{
   background:tan;
   left:0;
   top:0;
+  margin: -50px 0 0 -50px;
+  transition: all .3s ease;
+}
+
+h1{
+  color:white;
+}
+
+.person{
+  position:absolute;
+  width:200px;
+  left: calc(50% - 100px);
+}
+
+.background{
+  width:100%;
+  height:100%;
 }
