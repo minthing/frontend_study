@@ -1,0 +1,48 @@
+body{
+  overflow:hidden; /* 가로스크롤 없애기 */
+  position:relative
+}
+.background{
+  width:120%
+}
+
+.cookie{
+  position: absolute;
+  top:50%;
+  width:20%;
+  left: calc(50%);
+  z-index: 100;
+}
+
+.wrap_cont{
+  position : absolute;
+  left: 60%;
+  top: 10%;
+  transform: translate(-50%, 0);
+  width: 50%;
+  z-index : 1;
+  transform-style: preserve-3d; 
+  perspective: 300px;
+}
+
+.logo{
+  display:block;
+  margin:0 auto;
+  width:70%;
+}
+
+.wave1, .wave2{
+  position:absolute;
+  width:10%;
+  z-index:200;
+}
+
+.wave1{
+  left:20%;
+  top:30%;
+}
+
+.wave2{
+  left:73%;
+  top:65%;
+}
