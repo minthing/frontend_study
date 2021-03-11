@@ -28,3 +28,11 @@ css 요소들만을 활용해서 용감한 쿠키를 그려보았다.<br>
 ![화면 기록 2021-02-14 오전 12 42 39](https://user-images.githubusercontent.com/54466684/107854211-c02b2900-6e5d-11eb-9f4d-42f597d2f198.gif)
 css 요소로만으로 움직이는 잭 오 랜턴을 만들었다. [빔캠프 잭 오 랜턴](https://www.youtube.com/watch?v=-whGdudSBqU)의 디자인을 참조했으며,
 움직이는 애니메이션의 경우 직접 퍼센테이지를 지정해 만들었다.
+
+## JS
+vanilla JS 및 프레임워크를 사용한 웹 인터렉티브 연습
+
+
+1. 캐릭터와 로고가 움직이는 쿠키런 로비<br>
+<img src="https://user-images.githubusercontent.com/54466684/110241976-29064c80-7f97-11eb-95a0-6528d2d8beb2.gif" align="center"><br>
+마우스 움직임에 따라 각 이미지 위치가 동적으로 변하는 쿠키런 로비 (깃허브 이미지 사이즈의 한계로 캐릭터가 뭉개져보인다. 다른 방법 강구 필요...)
