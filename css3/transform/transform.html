@@ -11,14 +11,16 @@
         height:100px;
         border: 2px solid black;
         background-color:tan;
+        transition:1s; /*1s 2s => duration delay*/ /* 정확히 표현되는 수치에만 반응 */
+        /*transition-timing-function:ease(가속)/linear(등속)*/
       }
       .box:hover{
-        /*transform:scale(2) rotate(45deg);*/
+        transform:scale(2) rotate(45deg);
         /* scale:  크기를 조절 다른 박스에 영향 x
         rotate: 2D 돌리기*/
         /*transform:skew(30deg);*/
         /*skew: 비틀기 뒤에 X축 Y축 넣어서 지정 가능*/
-        transform:translate(50px, 50px);
+        /*transform:translate(50px, 50px);*/
         /* 이동 가능(x, y, z) 뒤에 X,Y,Z 붙일 수 있음 */
         /*transform-origin:left top; 변화의 중심점을 설정*/
       }
