@@ -1,6 +1,6 @@
 (()=>{
 
-  const actions = {
+  const actions = { 
     birdFlies(){
       document.querySelector('[data-index="2"] .bird').style.transform = `translate(${window.innerWidth}px`;
     }
