@@ -1,8 +1,20 @@
 (()=>{
 
-  const actions = { 
-    birdFlies(){
-      document.querySelector('[data-index="2"] .bird').style.transform = `translate(${window.innerWidth}px`;
+  const actions = {
+    birdFlies(key){
+      if(key){
+      document.querySelector('[data-index="2"] .bird').style.transform = `translateX(${window.innerWidth}px`;
+      }else{
+         document.querySelector('[data-index="2"] .bird').style.transform = `translateX(-100%)`;
+      }
+    },
+
+    birdFlies2(key){
+      if(key){
+      document.querySelector('[data-index="5"] .bird').style.transform = `translate(${window.innerWidth}px, -${window.innerHeight * 0.7}px)`;
+      }else{
+         document.querySelector('[data-index="5"] .bird').style.transform = `translate(-100%)`;
+      }
     }
   };
   const stepElem = document.querySelectorAll('.step');
@@ -28,8 +40,11 @@
 		}
   }
 
-  function inactivate(){
+  function inactivate(action){
     currentItem.classList.remove('visible');
+    if (action) {
+			actions[action](false); //객체의 메서드 호출
+		}
   }
 
 
@@ -45,11 +60,16 @@
 
       if((boundingRect.top > window.innerHeight * 0.1)&&
         (boundingRect.top < window.innerHeight * 0.8)){
-        inactivate();
+        inactivate(currentItem.dataset.action);
         currentItem = graphicElem[step.dataset.index];
         activate(currentItem.dataset.action);
       }
     }
   })
   activate();
+
+
+  window.addEventListener('load', ()=>{
+    setTimeout(() => scrollTo(0, 0), 100); //setTimeout 안하면 텍스트 스크롤 이벤트가 동작 안함
+  })
 })();
