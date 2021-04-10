@@ -1,0 +1,46 @@
+html{
+	font-size: 14px;
+}
+
+body{
+	perspective: 1500px; /* 3d 효과가 얼마나 멀리서 이루어지는가 (높을수록 완만) */
+	position: relative;
+	height:100vh;
+}
+
+.reflet{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin: auto;
+	width:30vw;
+	height:30vw;
+	outline: 2px solid black;
+	transform-style: preserve-3d;
+}
+
+.page, .page-face{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+
+.page{
+	transform: rotateY(45deg);
+	outline:1px solid red;
+	transform-style: preserve-3d;
+}
+
+.page-face{
+	background:cornsilk;
+	font-size:3rem;
+	backface-visibility:hidden;
+}
+
+.page-face:nth-child(2){
+	transform:rotateY(180deg);
+}
