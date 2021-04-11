@@ -30,9 +30,28 @@ body{
 }
 
 .page{
-	transform: rotateY(45deg);
+	transform: rotateY(0deg);
 	outline:1px solid red;
 	transform-style: preserve-3d;
+	transition:1s;
+}
+
+.page:nth-child(1){
+	z-index:2;
+	transform-origin: left;
+}
+
+.page:nth-child(1).page_flipped{
+	transform:rotateY(-150deg);
+}
+
+.page:nth-child(3){
+	z-index:1;
+	transform-origin:right;
+}
+
+.page:nth-child(3).page_flipped{
+	transform:rotateY(150deg);
 }
 
 .page-face{
