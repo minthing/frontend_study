@@ -76,7 +76,7 @@ body{
 	align-items: center;
 	font-size: 1.5rem;
 }
-.cover-page::before {
+.page-face::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -145,5 +145,8 @@ body{
 	display: inline-block;
 }
 
-
-
+.page:nth-child(1) .page-face:nth-child(2),
+.page:nth-child(2) .page-face:nth-child(1),
+.page:nth-child(3) .page-face:nth-child(2) {
+	background: #fff;
+}
