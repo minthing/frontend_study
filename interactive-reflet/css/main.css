@@ -3,9 +3,12 @@ html{
 }
 
 body{
+	background:url(../images/tablewood.jpg);
+	background-size: auto 130px;
 	perspective: 1500px; /* 3d 효과가 얼마나 멀리서 이루어지는가 (높을수록 완만) */
 	position: relative;
 	height:100vh;
+	font-family: 'Playfair Display', serif;
 }
 
 .reflet{
@@ -17,7 +20,6 @@ body{
 	margin: auto;
 	width:30vw;
 	height:30vw;
-	outline: 2px solid black;
 	transform-style: preserve-3d;
 }
 
@@ -31,9 +33,13 @@ body{
 
 .page{
 	transform: rotateY(0deg);
-	outline:1px solid red;
+	/* outline:1px solid red; */
 	transform-style: preserve-3d;
 	transition:1s;
+}
+
+.header-title, .inner-greeting{
+	font-family: 'Courgette', cursive;
 }
 
 .page:nth-child(1){
@@ -56,10 +62,88 @@ body{
 
 .page-face{
 	background:cornsilk;
-	font-size:3rem;
 	backface-visibility:hidden;
 }
 
 .page-face:nth-child(2){
 	transform:rotateY(180deg);
 }
+
+.cover-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+}
+.cover-page::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	top: 10px;
+	bottom: 10px;
+	border: 1px solid tan;
+}
+.menu-header-title {
+	font-family: 'Courgette', cursive;
+}
+.menu-list {
+	font-size: 0.7rem;
+}
+.menu-item {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 2em;
+	transition: 0.5s;
+}
+.zoom-in .menu-item {
+	opacity: 0;
+}
+.zoom-in .menu-item.current-menu {
+	opacity: 1;
+}
+.back-btn {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.current-menu .back-btn {
+	display: inline-block;
+}
+.menu-item-photo {
+	width: 20%;
+	padding-bottom: 20%;
+	flex-shrink: 0;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+.menu-item-info {
+	flex: 1;
+	margin-left: 1em;
+}
+.member-name {
+	font-size: 1rem;
+	font-weight: bold;
+}
+.close-btn {
+	display: none;
+	position: absolute;
+	top: -2rem;
+	right: 10px;
+	font-size: 1.2rem;
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.3) 0 1px 0;
+	backface-visibility: hidden;
+}
+.reflet-opened .close-btn {
+	display: inline-block;
+}
+
+
+
