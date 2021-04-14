@@ -23,6 +23,31 @@
         }, 650);
     }
 
+    function zoomin(item){
+        const rect = item.getBoundingClientRect(); // 해당 element의 위치 정보를 받아옴
+
+		const dx = window.innerWidth/2 - (rect.x + rect.width/2);
+		const dy = window.innerHeight/2 - (rect.y + rect.height/2);
+
+        let angle = 0;
+
+		switch (item.parentNode.parentNode.parentNode.dataset.page*1) {
+			case 1:
+				angle = -30;
+				break;
+			case 2:
+				angle = 0;
+				break;
+			case 3:
+				angle = 30;
+				break;
+		}
+
+        console.log(item.parentNode.parentNode.parentNode.dataset.page);
+
+        reflet.style.transform = `translate3d(${dx}px, ${dy}px, 50vw) rotateY(${angle}deg)`;
+    }
+
     reflet.addEventListener('click', e => {
         let pageElem = getTarget(e.target, 'page');
         if(pageElem){
