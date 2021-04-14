@@ -39,5 +39,11 @@
             count = 0;
             close();
         }
+
+        let menuItemElem = getTarget(e.target, 'menu-item');
+        if(menuItemElem){
+            zoomin(menuItemElem);
+        }
+
     })
 })();
