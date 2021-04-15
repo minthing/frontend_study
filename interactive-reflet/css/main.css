@@ -87,25 +87,6 @@ body{
 	bottom: 10px;
 	border: 1px solid tan;
 }
-.menu-header-title {
-	font-family: 'Courgette', cursive;
-}
-.menu-list {
-	font-size: 0.7rem;
-}
-.menu-item {
-	display: flex;
-	align-items: center;
-	position: relative;
-	padding: 2em;
-	transition: 0.5s;
-}
-.zoom-in .menu-item {
-	opacity: 0;
-}
-.zoom-in .menu-item.current-menu {
-	opacity: 1;
-}
 .back-btn {
 	display: none;
 	position: absolute;
@@ -150,4 +131,24 @@ body{
 .page:nth-child(2) .page-face:nth-child(1),
 .page:nth-child(3) .page-face:nth-child(2) {
 	background: #fff;
+}
+
+.menu-header-title {
+	font-family: 'Courgette', cursive;
+}
+.menu-list {
+	font-size: 0.7rem;
+}
+.menu-item {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 2em;
+	transition: 0.5s;
+}
+.zoom-in .menu-item {
+	opacity: 0;
+}
+.zoom-in .current-menu {
+	opacity: 1;
 }

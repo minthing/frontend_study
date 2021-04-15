@@ -44,8 +44,19 @@
 		}
 
         console.log(item.parentNode.parentNode.parentNode.dataset.page);
-
+        document.body.classList.add('zoom-in');
         reflet.style.transform = `translate3d(${dx}px, ${dy}px, 50vw) rotateY(${angle}deg)`;
+        currentMenu = item;
+        currentMenu.classList.add('current-menu');
+    }
+
+    function zoomout(){
+        reflet.style.transform = `translate3d(0px, 0px, 0px)`;
+        if(currentMenu){
+            document.body.classList.remove('zoom-in');
+            currentMenu.classList.remove('current-menu');
+            currentMenu = null;
+        }
     }
 
     reflet.addEventListener('click', e => {
@@ -63,11 +74,16 @@
             document.body.classList.remove('reflet-opened');
             count = 0;
             close();
+            zoomout();
         }
 
         let menuItemElem = getTarget(e.target, 'menu-item');
         if(menuItemElem){
             zoomin(menuItemElem);
+        }
+        let backBtn = getTarget(e.target, 'back-btn');
+        if(backBtn){
+            zoomout();
         }
 
     })
