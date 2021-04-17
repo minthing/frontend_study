@@ -1,7 +1,13 @@
 (()=>{
     const reflet = document.querySelector('.reflet');
     const pageElems = document.querySelectorAll('.page');
+    const hand = document.querySelector('.hand');
     let count = 0;
+
+    const handPosition = {x:0, y:0}; // 손 위치
+    const targetPosition = {x:0, y:0}; // 마우스 위치
+    let distanceX = 0;
+    let distanceY = 0;
 
     function getTarget(elem, className){
         while(!elem.classList.contains(className)){
@@ -59,6 +65,19 @@
         }
     }
 
+    function render(){
+        distanceX = targetPosition.x - handPosition.x;
+        distanceY = targetPosition.y - handPosition.y;
+        handPosition.x = handPosition.x + distanceX*0.1;
+        handPosition.y = handPosition.y + distanceY*0.1;
+        hand.style.transform = `translate(${handPosition.x-60}px, ${handPosition.y+30}px)`;
+        console.log("으아악 멈추지않아!");
+        console.log(handPosition.x);
+        requestAnimationFrame(render);
+    }
+    
+    render();
+
     reflet.addEventListener('click', e => {
         let pageElem = getTarget(e.target, 'page');
         if(pageElem){
@@ -86,5 +105,16 @@
             zoomout();
         }
 
+    })
+
+
+    reflet.addEventListener('animationend', () => {
+        reflet.style.animation = 'none'; // 애니메이션 충돌 회피
+    })
+
+    window.addEventListener('mousemove', e => {
+        targetPosition.x = e.clientX - window.innerWidth*0.7; // hand의 초기 포지션 만큼 빼줌
+        targetPosition.y = e.clientY -  window.innerHeight*0.7;
+        console.log(targetPosition);
     })
 })();

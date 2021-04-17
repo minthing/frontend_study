@@ -1,3 +1,13 @@
+@keyframes start {
+	0% {
+		transform: translate(-100%, 100%) rotate(-540deg); /* 왼쪽 아래 위치 */
+	}
+
+	100%{
+		transform : translate(0, 0) rotateY(0);
+	}
+}
+
 html{
 	font-size: 14px;
 }
@@ -11,6 +21,27 @@ body{
 	font-family: 'Playfair Display', serif;
 }
 
+.hand{
+	position:absolute;
+	left:70%;
+	top:70%;
+	width:400px;
+	z-index:10;
+	
+}
+
+.hand img{
+	transition:1s;
+	transform-origin: left top;
+}
+
+
+.zoom-in .hand{
+	transform:scale(2);
+}
+
+
+
 .reflet{
 	position:absolute;
 	left:0;
@@ -22,6 +53,8 @@ body{
 	height:30vw;
 	transform-style: preserve-3d;
 	transition:1s;
+	cursor: pointer;
+	animation:start 1s forwards;
 }
 
 .page, .page-face{
