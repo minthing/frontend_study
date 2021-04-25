@@ -1,0 +1,53 @@
+html{
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size:14px;
+}
+
+body{
+	overflow-x: hidden;
+	color:rgb(29, 29, 31);
+	letter-spacing: -0.05em;
+	background:#fff;
+}
+
+p{
+	line-height: 1.6;
+}
+
+a{
+	color:rgb(29, 29, 31);
+	text-decoration: none;
+}
+
+.global_nav{
+	height: 44px;
+}
+
+.global_nav_link, .local_nav_link{
+	display: flex;
+	height:100%;
+	
+	align-items:center;
+	max-width: 1000px;
+	margin:0 auto;
+}
+
+.global_nav_link{
+	justify-content: space-between;
+}
+
+.local_nav{
+	height:54px;
+	border-bottom:1px solid #ddd;
+}
+
+.local_nav_link .local_nav_item:not(.product_name){
+	margin-left:2em;
+	font-size:0.8rem;
+}
+
+.product_name{
+	margin-right:auto; /* 나머지를 오른쪽으로 씀 */
+	font-size:1.2rem;
+	font-weight: bold;
+}
