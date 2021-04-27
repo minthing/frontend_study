@@ -21,6 +21,7 @@ a{
 
 .global_nav{
 	height: 44px;
+	padding:0 1rem;
 }
 
 .global_nav_link, .local_nav_link{
@@ -39,6 +40,7 @@ a{
 .local_nav{
 	height:54px;
 	border-bottom:1px solid #ddd;
+	padding:0 1rem;
 }
 
 .local_nav_link .local_nav_item:not(.product_name){
@@ -50,4 +52,41 @@ a{
 	margin-right:auto; /* 나머지를 오른쪽으로 씀 */
 	font-size:1.2rem;
 	font-weight: bold;
+}
+
+.scroll_section{
+	padding-top:50vh;
+}
+
+#scroll_section_0 h1{
+	font-size:4rem;
+	text-align: center;
+}
+
+.main_message{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:3em;
+	font-size:1.5rem;
+	margin:3px;
+}
+
+.main_message p{
+	line-height: 1.2;
+	font-weight: bold;
+	text-align: center;
+}
+
+.description{
+	padding: 0 1em;
+	font-size:1.2rem;
+	color:#888;
+}
+
+.description strong{
+	font-size: 3rem;
+	color:#000;
+	float: left;
+	margin-left:0.2em;
 }
