@@ -78,7 +78,19 @@ a{
 	text-align: center;
 }
 
+.main_message small{
+	display:block;
+	font-size:1rem;
+	margin-bottom:0.5em;
+}
+
+#scroll_section_2 .main_message{
+	font-size:3.5rem;
+}
+
 .description{
+	max-width: 1000px;
+	margin: 0 auto;
 	padding: 0 1em;
 	font-size:1.2rem;
 	color:#888;
@@ -89,4 +101,80 @@ a{
 	color:#000;
 	float: left;
 	margin-left:0.2em;
+}
+
+.desc_message{
+	font-weight: bold;
+	width:50%;
+}
+
+.pin{
+	width:1px;
+	background:#000;
+	height:100px;
+}
+
+.mid_message{
+	max-width:1000px;
+	margin: 0 auto;
+	font-size:2rem;
+	color:#888;
+	padding: 0 1rem;
+}
+
+.mid_message strong{
+	color:rgb(29, 29, 31);
+}
+
+.canvas_caption{
+	max-width: 1000px;
+	margin: 0 auto;
+	padding:0 1rem;
+	color:#888;
+	text-align: center;
+}
+
+.footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 7rem;
+	background:gold;
+}
+
+@media (min-width:1024px){
+	#scroll_section_0 h1{
+		font-size:9vh;
+	}
+	.main_message{
+		font-size:4vh;
+	}
+
+	.description{
+		font-size: 1.5rem;
+	}
+
+	.description strong{
+		font-size:6rem;
+	}
+
+	#scroll_section_2 .main_message{
+		font-size:6vw;
+	}
+
+	.main_message small{
+		font-size: 1.5vw;
+	}
+
+	.desc_message{
+		width:20%;
+	}
+
+	.mid_message{
+		font-size:4vw;
+	}
+
+	.canvas_caption{
+		font-size:1.5rem;
+	}
 }
