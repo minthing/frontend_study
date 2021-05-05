@@ -20,6 +20,9 @@ a{
 }
 
 .global_nav{
+	position: absolute; /* 메뉴들이 더이상 공간을 차지하지 않음! */
+	top:0;
+	width:100vw;
 	height: 44px;
 	padding:0 1rem;
 }
@@ -38,6 +41,9 @@ a{
 }
 
 .local_nav{
+	position: absolute;
+	top:44px;
+	width:100vw;
 	height:54px;
 	border-bottom:1px solid #ddd;
 	padding:0 1rem;
@@ -56,6 +62,7 @@ a{
 
 .scroll_section{
 	padding-top:50vh;
+	border: 1px solid skyblue;
 }
 
 #scroll_section_0 h1{

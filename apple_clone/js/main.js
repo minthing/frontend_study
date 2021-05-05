@@ -53,9 +53,15 @@
         }
         console.log(prevScrollHeight); // scrollHeight:화면 전체의 길이 pageYOffset:내가 스크롤한 만큼의 길이
 
-        if(currentY > currentScene){
-            
+        if(currentY > prevScrollHeight + sceneInfo[currentScene].scrollHeight){ // scrollHeight는 미리 지정되어 있음. 더한 값이 pageYOffset(currentY)과 같아지면 다음 씬으로 넘어간거임!
+            currentScene += 1;
         }
+
+        if(currentY < prevScrollHeight){
+            currentScene -=1;
+        }
+
+        console.log(currentScene);
     }
 
     window.addEventListener('resize', setLayout);
