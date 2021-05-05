@@ -1,6 +1,8 @@
 (()=>{
 
     let currentY = 0;
+    let prevScrollHeight = 0;
+    let currentScene = 0;
 
     const sceneInfo = [{
         type: 'sticky',
@@ -35,6 +37,8 @@
         }
     }];
 
+    console.log(sceneInfo);
+
     function setLayout(){
         for (let i = 0; i < sceneInfo.length; i++){
             sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
@@ -43,7 +47,15 @@
     }
 
     function scrollLoop(){
-        console.log(currentY); // scrollHeight:화면 전체의 길이 pageYOffset:내가 스크롤한 만큼의 길이
+        prevScrollHeight = 0;
+        for(let i = 0; i < currentScene; i++){
+            prevScrollHeight += sceneInfo[i].scrollHeight;
+        }
+        console.log(prevScrollHeight); // scrollHeight:화면 전체의 길이 pageYOffset:내가 스크롤한 만큼의 길이
+
+        if(currentY > currentScene){
+            
+        }
     }
 
     window.addEventListener('resize', setLayout);
