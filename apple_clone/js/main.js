@@ -9,7 +9,14 @@
         heightNum:5, // 기기별로 변화에 대응하도록 heightNum * scrollHeight
         scrollHeight:0,
         objs:{
-            container:document.querySelector('#scroll_section_0')
+            container:document.querySelector('#scroll_section_0'),
+            messageA: document.querySelectorAll('.main_message.one'),
+            messageB: document.querySelectorAll('.main_message.two'),
+            messageC: document.querySelectorAll('.main_message.three'),
+            messageD: document.querySelectorAll('.main_message.four'),
+        },
+        values:{
+            messageA_opacity: [0, 1]
         }
     },
     {
@@ -38,6 +45,19 @@
     }];
 
     console.log(sceneInfo);
+
+    function playAnimation(){
+        switch(currentScene){
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
 
 
     function setLayout(){
@@ -78,6 +98,8 @@
         document.body.setAttribute('id', `show_scene_${currentScene}`);
     }
    
+
+    playAnimation();
 
     window.addEventListener('resize', setLayout);
     window.addEventListener('load',  setLayout);
