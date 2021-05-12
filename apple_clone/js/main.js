@@ -46,6 +46,10 @@
 
     console.log(sceneInfo);
 
+    function calcValues(values){
+
+    }
+
     function playAnimation(){
         switch(currentScene){
             case 0:
