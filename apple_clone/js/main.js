@@ -46,7 +46,7 @@
 
     console.log(sceneInfo);
 
-    function calcValues(values){
+    function calcValues(values, currentYOffset){
 
     }
 
