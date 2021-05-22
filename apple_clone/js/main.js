@@ -51,8 +51,16 @@
     }
 
     function playAnimation(){
+        const objs = sceneInfo[currentScene].objs;
+        const values = sceneInfo[currentScene].values;
+        let currentYOffset = yOffset - prevScrollHeight;
+        console.log("currentYOffset", currentYOffset)
         switch(currentScene){
             case 0:
+                let messageA_opacity_0 = values.messageA_opacity[0];
+                let messageA_opacity_1 = values.messageA_opacity[1];
+
+                console.log(calcValues(values.messageA_opacity, currentYOffset))
                 break;
             case 1:
                 break;
@@ -100,10 +108,10 @@
         }
         console.log(currentScene);
         document.body.setAttribute('id', `show_scene_${currentScene}`);
+
+        playAnimation();
     }
    
-
-    playAnimation();
 
     window.addEventListener('resize', setLayout);
     window.addEventListener('load',  setLayout);
