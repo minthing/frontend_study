@@ -10,10 +10,10 @@
         scrollHeight:0,
         objs:{
             container:document.querySelector('#scroll_section_0'),
-            messageA: document.querySelectorAll('.main_message.one'),
-            messageB: document.querySelectorAll('.main_message.two'),
-            messageC: document.querySelectorAll('.main_message.three'),
-            messageD: document.querySelectorAll('.main_message.four'),
+            messageA: document.querySelector('#scroll_section_0 .main_message.one'),
+            messageB: document.querySelector('#scroll_section_0 .main_message.two'),
+            messageC: document.querySelector('#scroll_section_0 .main_message.three'),
+            messageD: document.querySelector('#scroll_section_0 .main_message.four'),
         },
         values:{
             messageA_opacity: [0, 1]
@@ -44,9 +44,15 @@
         }
     }];
 
-    console.log(sceneInfo);
-
     function calcValues(values, currentYOffset){
+
+        let rv
+        let scrollRatio = currentYOffset / sceneInfo[currentScene].scrollHeight
+
+
+        rv = scrollRatio * (values[1] - values[0]) + values[0]
+
+        return rv
 
     }
 
@@ -54,13 +60,10 @@
         const objs = sceneInfo[currentScene].objs;
         const values = sceneInfo[currentScene].values;
         let currentYOffset = yOffset - prevScrollHeight;
-        console.log("currentYOffset", currentYOffset)
         switch(currentScene){
             case 0:
-                let messageA_opacity_0 = values.messageA_opacity[0];
-                let messageA_opacity_1 = values.messageA_opacity[1];
-
-                console.log(calcValues(values.messageA_opacity, currentYOffset))
+                let messageA_opacity_in = calcValues(values.messageA_opacity, currentYOffset);
+                objs.messageA.style.opacity = messageA_opacity_in;
                 break;
             case 1:
                 break;
@@ -88,8 +91,6 @@
             }
         }
         document.body.setAttribute('id', `show_scene_${currentScene}`);
-        console.log(currentScene);
-        console.log(totalScrollHeight, yOffset);
     }
 
     function scrollLoop(){
@@ -106,7 +107,6 @@
         if(yOffset < prevScrollHeight){
             currentScene -=1;
         }
-        console.log(currentScene);
         document.body.setAttribute('id', `show_scene_${currentScene}`);
 
         playAnimation();
