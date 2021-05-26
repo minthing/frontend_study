@@ -3,6 +3,7 @@
     let yOffset = 0;
     let prevScrollHeight = 0;
     let currentScene = 0;
+    let enterNewScene = false;
 
     const sceneInfo = [{
         type: 'sticky',
@@ -64,6 +65,7 @@
             case 0:
                 let messageA_opacity_in = calcValues(values.messageA_opacity, currentYOffset);
                 objs.messageA.style.opacity = messageA_opacity_in;
+                console.log(messageA_opacity_in);
                 break;
             case 1:
                 break;
@@ -101,14 +103,17 @@
         // scrollHeight:화면 전체의 길이 pageYOffset:내가 스크롤한 만큼의 길이
 
         if(yOffset > prevScrollHeight + sceneInfo[currentScene].scrollHeight){ // scrollHeight는 미리 지정되어 있음. 더한 값이 pageYOffset(yOffset)과 같아지면 다음 씬으로 넘어간거임!
+            enterNewScene = true; 
             currentScene += 1;
         }
 
         if(yOffset < prevScrollHeight){
+            if(currentScene === 0)return; // 새로운 씬에 진입하는 순간에만!
             currentScene -=1;
         }
         document.body.setAttribute('id', `show_scene_${currentScene}`);
 
+        if(enterNewScene)return;
         playAnimation();
     }
    
