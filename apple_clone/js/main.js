@@ -108,12 +108,12 @@
         }
 
         if(yOffset < prevScrollHeight){
-            if(currentScene === 0)return; // 새로운 씬에 진입하는 순간에만!
+            if(currentScene === 0)return; // 새로운 씬에 진입하는 순간에만! 지금 중지됨
             currentScene -=1;
         }
         document.body.setAttribute('id', `show_scene_${currentScene}`);
 
-        if(enterNewScene)return;
+        if(enterNewScene)return; //강제종료
         playAnimation();
     }
    
